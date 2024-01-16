@@ -20,20 +20,18 @@ public class ClassOnePatternsTest {
     void setUpAll() {
         open("http://localhost:9999/");
     }
-    GeneratorTestsDate geTeDa = new GeneratorTestsDate();
 
     @Test
     void deliveryCardTest() {
-        String meetingDate = geTeDa.GeherateTestsDate(7);
-        String newMeetingData = geTeDa.GeherateTestsDate(10);
+        String meetingDate = GeneratorTestsDate.geherateTestsDate(7);
+        String newMeetingData = GeneratorTestsDate.geherateTestsDate(10);
 
-        $("[data-test-id=city] input").setValue(geTeDa.GeherateTestsCity("ru"));
-//        String date = dateGenerate(5, "dd.MM.yyyy");
+        $("[data-test-id=city] input").setValue(GeneratorTestsDate.geherateTestsCity("ru"));
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME),
                 Keys.DELETE);
         $("[data-test-id='date'] input").setValue(meetingDate);
-        $("[data-test-id='name'] input").setValue(geTeDa.GenerateTestsName());
-        $("[data-test-id='phone'] input").setValue(geTeDa.GenerateTestsPhone());
+        $("[data-test-id='name'] input").setValue(GeneratorTestsDate.generateTestsName());
+        $("[data-test-id='phone'] input").setValue(GeneratorTestsDate.generateTestsPhone());
         $("[data-test-id='agreement']").click();
         $(".button").click();
         $(".notification__title")
